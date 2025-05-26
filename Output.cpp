@@ -7,6 +7,9 @@ void startMenu() {
     cout << "(2) Calendar" << endl;
 }
 
+// will use later
 void inputMonth() {
     cout << "Month (1-12): ";
 }
+
+
