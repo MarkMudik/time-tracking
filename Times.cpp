@@ -8,8 +8,6 @@ Times::Times() {
     startMinute = 0;
     endHour = 0;
     endMinute = 0;
-    durationMinutes = 0;
-    durationHours = 0;
 }
 
 void Times::setMonth(int x) {
@@ -66,12 +64,14 @@ void Times::setEndMinute(int x) {
     }
 }
 
-void Times::setDurationHours(int x) {
-    durationHours = x;
-}
+void Times::setDuration(int startMinute, int startHour, int endHour, int endMinute) {
 
-void Times::setDurationMinutes(int x) {
-    durationMinutes = x;
+    // convert to minutes
+    int startTotal, endTotal;
+    startTotal = ((startHour * 60) + startMinute);
+    endTotal = ((endHour * 60) + endMinute);
+    // calculation
+    duration = endTotal - startTotal;
 }
 
 int Times::getMonth() const {
@@ -99,10 +99,6 @@ int Times::getEndMinute() const {
 }
 
 
-int Times::getDurationHours() const {
-    return durationHours;
-}
-
-int Times::getDurationMinutes() const {
-    return durationMinutes;
+int Times::getDuration() const {
+    return duration;
 }
