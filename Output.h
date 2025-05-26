@@ -2,7 +2,6 @@
 #define OUTPUT_H
 
 void startMenu();
-void inputDateAndTimeMenu();
-void outputCalendar();
+void inputMonth();
 
 #endif
