@@ -10,7 +10,6 @@ Times::Times() {
     endMinute = 0;
 }
 
-void Times::setMonth(int x) { if (x >= 1 && x <= 12) { month = x; } else { month = 1; std::cout << "Error\n"; } }
 void Times::setDay(int x) { if (x >= 1 && x <= 31) { day = x; } else { day = 1; std::cout << "Error\n"; } }
 void Times::setStartHour(int x) { if (x >= 0 && x <= 23) { startHour = x; } else { startHour = 0; std::cout << "Error\n"; } }
 void Times::setEndHour(int x) { if (x >= 0 && x <= 23) { endHour = x; } else { endHour = 0; std::cout << "Error\n"; } }

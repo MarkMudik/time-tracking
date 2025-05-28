@@ -5,7 +5,6 @@ class Times {
 public:
     Times();
     // setters
-    void setMonth(int x);
     void setDay(int x);
     void setStartHour(int x);
     void setStartMinute(int x);
