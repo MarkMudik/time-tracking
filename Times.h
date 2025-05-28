@@ -11,7 +11,7 @@ public:
     void setStartMinute(int x);
     void setEndHour(int x);
     void setEndMinute(int x);
-    void setDuration(int startMinute, int startHour, int endHour, int endMinute);
+    void setDuration(int startHour, int startMinute, int endHour, int endMinute);
     // getters
     int getMonth() const;
     int getDay() const;

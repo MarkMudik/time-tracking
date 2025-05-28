@@ -7,7 +7,7 @@ LDFLAGS =
 TARGET = main
 
 # Source files
-SRCS = main.cpp
+SRCS = main.cpp Recipient.cpp Times.cpp
 OBJS = $(SRCS:.cpp=.o)
 
 # Default target

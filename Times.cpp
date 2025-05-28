@@ -17,7 +17,7 @@ void Times::setEndHour(int x) { if (x >= 0 && x <= 23) { endHour = x; } else { e
 void Times::setStartMinute(int x) { if (x >= 0 && x <= 59) { startMinute = x; } else { startMinute = 0; std::cout << "Error\n"; } }
 void Times::setEndMinute(int x) { if (x >= 0 && x <= 59) { endMinute = x; } else { endMinute = 0; std::cout << "Error\n"; } }
 
-void Times::setDuration(int startMinute, int startHour, int endHour, int endMinute) {
+void Times::setDuration(int startHour, int startMinute, int endHour, int endMinute) {
     // convert to minutes
     int startTotal, endTotal;
     startTotal = ((startHour * 60) + startMinute);

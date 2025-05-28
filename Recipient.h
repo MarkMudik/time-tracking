@@ -3,16 +3,13 @@
 #include "Times.h"
 #include <string>
 
-class Recipient {
+class Recipient : public Times {
 public:
     // constructor
     Recipient(const std::string &x, const int y);
-    // getter
-    const Times& getTimes() const;
 private:
     std::string name;
     int required;
-    Times times;
 };
 
 #endif
