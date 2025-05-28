@@ -3,7 +3,7 @@
 
 Times::Times() {
     for (int i = 0; i < 31; i++) {
-        day[i] = 0;
+        day[i] = i;
         startHour[i] = 0;
         startMinute[i] = 0;
         endHour[i] = 0;
@@ -11,7 +11,6 @@ Times::Times() {
     }
 }
 
-void Times::setDay(int arr, int x) { if (x >= 1 && x <= 31) { day[arr] = x; } else { day[arr] = 1; std::cout << "Error\n"; } }
 void Times::setStartHour(int arr, int x) { if (x >= 0 && x <= 23) { startHour[arr] = x; } else { startHour[arr] = 0; std::cout << "Error\n"; } }
 void Times::setEndHour(int arr, int x) { if (x >= 0 && x <= 23) { endHour[arr] = x; } else { endHour[arr] = 0; std::cout << "Error\n"; } }
 void Times::setStartMinute(int arr, int x) { if (x >= 0 && x <= 59) { startMinute[arr] = x; } else { startMinute[arr] = 0; std::cout << "Error\n"; } }

@@ -16,6 +16,7 @@ public:
     // getters
     string getName() const;
     int getMinutesNeeded() const;
+    void printFormattedDay(int x);
 private:
     string name;
     int required;

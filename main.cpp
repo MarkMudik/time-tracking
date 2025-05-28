@@ -20,12 +20,23 @@ int main() {
         {
             cout << "Day: ";
             cin >> userInput.day;
+            userInput.day--;
             // get recipient
             cout << "Choose Recipient " << endl;
             for (int i = 0; i < 2; i++) {
-                cout << "(" << i << "): " << recipient[i].getName() << endl;
+                cout << "(" << i+1 << "): " << recipient[i].getName() << endl;
             }
             cin >> userInput.recipient;
+            userInput.recipient--;
+            recipient[userInput.recipient].enterTimes(userInput.day);
+        } else if (userInput.menu == 2) {
+            cout << "Which Recipient: ";
+            cin >> userInput.recipient;
+            userInput.recipient--;
+            // print formatted
+            for (int i = 0; i < 31; i++) {
+                recipient[userInput.recipient].printFormattedDay(i);
+            }
         }
     } while (userInput.menu != 0);
 
@@ -37,4 +48,3 @@ void printMenu() {
     cout << "(2) Calendar" << endl;
     cout << "(0) Exit" << endl;
 }
-
