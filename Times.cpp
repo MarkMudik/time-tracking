@@ -2,20 +2,22 @@
 #include <iostream>
 
 Times::Times() {
-    day = 0;
-    startHour = 0;
-    startMinute = 0;
-    endHour = 0;
-    endMinute = 0;
+    for (int i = 0; i < 31; i++) {
+        day[i] = 0;
+        startHour[i] = 0;
+        startMinute[i] = 0;
+        endHour[i] = 0;
+        endMinute[i] = 0;
+    }
 }
 
-void Times::setDay(int x) { if (x >= 1 && x <= 31) { day = x; } else { day = 1; std::cout << "Error\n"; } }
-void Times::setStartHour(int x) { if (x >= 0 && x <= 23) { startHour = x; } else { startHour = 0; std::cout << "Error\n"; } }
-void Times::setEndHour(int x) { if (x >= 0 && x <= 23) { endHour = x; } else { endHour = 0; std::cout << "Error\n"; } }
-void Times::setStartMinute(int x) { if (x >= 0 && x <= 59) { startMinute = x; } else { startMinute = 0; std::cout << "Error\n"; } }
-void Times::setEndMinute(int x) { if (x >= 0 && x <= 59) { endMinute = x; } else { endMinute = 0; std::cout << "Error\n"; } }
+void Times::setDay(int arr, int x) { if (x >= 1 && x <= 31) { day[arr] = x; } else { day[arr] = 1; std::cout << "Error\n"; } }
+void Times::setStartHour(int arr, int x) { if (x >= 0 && x <= 23) { startHour[arr] = x; } else { startHour[arr] = 0; std::cout << "Error\n"; } }
+void Times::setEndHour(int arr, int x) { if (x >= 0 && x <= 23) { endHour[arr] = x; } else { endHour[arr] = 0; std::cout << "Error\n"; } }
+void Times::setStartMinute(int arr, int x) { if (x >= 0 && x <= 59) { startMinute[arr] = x; } else { startMinute[arr] = 0; std::cout << "Error\n"; } }
+void Times::setEndMinute(int arr, int x) { if (x >= 0 && x <= 59) { endMinute[arr] = x; } else { endMinute[arr] = 0; std::cout << "Error\n"; } }
 
-void Times::setDuration(int startHour, int startMinute, int endHour, int endMinute) {
+void Times::setDuration(int arr, int startHour, int startMinute, int endHour, int endMinute) {
     // convert to minutes
     int startTotal, endTotal;
     startTotal = ((startHour * 60) + startMinute);
@@ -23,33 +25,33 @@ void Times::setDuration(int startHour, int startMinute, int endHour, int endMinu
     // calculation
     if ((endTotal - startTotal) < 0) {
         std::cout << "Duration is negative" << std::endl;
-        duration = 0;
+        duration[arr] = 0;
     } else {
-        duration = endTotal - startTotal;
+        duration[arr] = endTotal - startTotal;
     }
 }
 
-int Times::getDay() const {
-    return day;
+int Times::getDay(int arr) const {
+    return day[arr];
 }
 
-int Times::getStartHour() const {
-    return startHour;
+int Times::getStartHour(int arr) const {
+    return startHour[arr];
 }
 
-int Times::getStartMinute() const {
-    return startMinute;
+int Times::getStartMinute(int arr) const {
+    return startMinute[arr];
 }
 
-int Times::getEndHour() const {
-    return endHour;
+int Times::getEndHour(int arr) const {
+    return endHour[arr];
 }
 
-int Times::getEndMinute() const {
-    return endMinute;
+int Times::getEndMinute(int arr) const {
+    return endMinute[arr];
 }
 
 
-int Times::getDuration() const {
-    return duration;
+int Times::getDuration(int arr) const {
+    return duration[arr];
 }

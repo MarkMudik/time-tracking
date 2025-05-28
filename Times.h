@@ -5,21 +5,21 @@ class Times {
 public:
     Times();
     // setters
-    void setDay(int x);
-    void setStartHour(int x);
-    void setStartMinute(int x);
-    void setEndHour(int x);
-    void setEndMinute(int x);
-    void setDuration(int startHour, int startMinute, int endHour, int endMinute);
+    void setDay(int arr, int x);
+    void setStartHour(int arr, int x);
+    void setStartMinute(int arr, int x);
+    void setEndHour(int arr, int x);
+    void setEndMinute(int arr, int x);
+    void setDuration(int arr, int startHour, int startMinute, int endHour, int endMinute);
     // getters
-    int getDay() const;
-    int getStartHour() const;
-    int getStartMinute() const;
-    int getEndHour() const;
-    int getEndMinute() const;
-    int getDuration() const;
+    int getDay(int arr) const;
+    int getStartHour(int arr) const;
+    int getStartMinute(int arr) const;
+    int getEndHour(int arr) const;
+    int getEndMinute(int arr) const;
+    int getDuration(int arr) const;
 private:
-    int day, startHour, startMinute, endHour, endMinute, duration;
+    int day[31], startHour[31], startMinute[31], endHour[31], endMinute[31], duration[31];
     };
 
 #endif

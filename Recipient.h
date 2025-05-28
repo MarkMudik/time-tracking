@@ -9,7 +9,7 @@ public:
     // constructors
     Recipient();
     Recipient(const string &x, const int y);
-    void enterTimes();
+    void enterTimes(int arr);
     // setters
     void setName(const string x);
     void setMinutesNeeded(const int y);

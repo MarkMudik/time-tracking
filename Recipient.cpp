@@ -3,10 +3,10 @@
 #include <string>
 using namespace std;
 
-Recipient::Recipient(const string &x, const int y) : name(x), required(y) {}
 Recipient::Recipient() {};
+Recipient::Recipient(const string &x, const int y) : name(x), required(y) {}
 
-void Recipient::enterTimes() {
+void Recipient::enterTimes(int arr) {
     string userInput;
     cout << "=== " << name << "===" << endl;
     cout << "Start time: ";
@@ -17,8 +17,8 @@ void Recipient::enterTimes() {
     string hoursStr = userInput.substr(0, 2);
     string minutesStr = userInput.substr(3, 2);
 
-    setStartHour(stoi(hoursStr));
-    setStartMinute(stoi(minutesStr));
+    setStartHour(arr, stoi(hoursStr));
+    setStartMinute(arr, stoi(minutesStr));
 
     cout << "End time: ";
 
@@ -29,15 +29,17 @@ void Recipient::enterTimes() {
     hoursStr = userInput.substr(0, 2);
     minutesStr = userInput.substr(3, 2);
 
-    setEndHour(stoi(hoursStr));
-    setEndMinute(stoi(minutesStr));
+    setEndHour(arr, stoi(hoursStr));
+    setEndMinute(arr, stoi(minutesStr));
 
-    setDuration(getStartHour(), getStartMinute(), getEndHour(), getEndMinute());
+    setDuration(arr, getStartHour(arr), getStartMinute(arr), getEndHour(arr), getEndMinute(arr));
 }
 
+// setters
 void Recipient::setName(const string x) { name = x; };
 void Recipient::setMinutesNeeded(const int y) { required = y; };
 
+// getters
 string Recipient::getName() const {
     return name;
 }
