@@ -12,10 +12,10 @@ void Recipient::enterTimes() {
     cout << "Start time: ";
     do {
         cin >> userInput;
-    } while (userInput.length() != 4);
+    } while (userInput.length() != 5);
 
     string hoursStr = userInput.substr(0, 2);
-    string minutesStr = userInput.substr(2, 2);
+    string minutesStr = userInput.substr(3, 2);
 
     setStartHour(stoi(hoursStr));
     setStartMinute(stoi(minutesStr));
@@ -24,10 +24,10 @@ void Recipient::enterTimes() {
 
     do {
         cin >> userInput;
-    } while (userInput.length() != 4);
+    } while (userInput.length() != 5);
 
     hoursStr = userInput.substr(0, 2);
-    minutesStr = userInput.substr(2, 2);
+    minutesStr = userInput.substr(3, 2);
 
     setEndHour(stoi(hoursStr));
     setEndMinute(stoi(minutesStr));

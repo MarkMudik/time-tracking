@@ -7,12 +7,14 @@ void printMenu();
 
 int main() {
 
-    string userInputStr;
-    int userInputInt;
     // if want to make it interactive in cmd, make a default constructor that doesnt have parameters
     Recipient recipient[2] = { Recipient("Nad", 3982), Recipient("Myk", 4246) };
 
-    printMenu();
+    recipient[0].enterTimes();
+    recipient[1].enterTimes();
+
+    cout << "Duration for " << recipient[0].getName() << ": " << recipient[0].getDuration() << endl;
+    cout << "Duration for " << recipient[1].getName() << ": " << recipient[1].getDuration() << endl;
 
     return 0;
 }

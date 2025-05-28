@@ -2,7 +2,6 @@
 #include <iostream>
 
 Times::Times() {
-    month = 0;
     day = 0;
     startHour = 0;
     startMinute = 0;
@@ -28,10 +27,6 @@ void Times::setDuration(int startHour, int startMinute, int endHour, int endMinu
     } else {
         duration = endTotal - startTotal;
     }
-}
-
-int Times::getMonth() const {
-    return month;
 }
 
 int Times::getDay() const {
