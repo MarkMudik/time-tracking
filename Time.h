@@ -10,7 +10,7 @@ public:
     void setStartMinute(int arr, int x);
     void setEndHour(int arr, int x);
     void setEndMinute(int arr, int x);
-    void setDuration(int arr, int startHour, int startMinute, int endHour, int endMinute);
+    void setDuration(int arr);
     // getters
     int getDay() const;
     int getStartHour(int arr) const;

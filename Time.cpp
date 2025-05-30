@@ -18,11 +18,11 @@ void Time::setStartMinute(int arr, int x) { if (x >= 0 && x <= 59) { startMinute
 void Time::setEndHour(int arr, int x) { if (x >= 0 && x <= 23) { endHour[arr] = x; } else { endHour[arr] = 0; cout << "Error\n"; } }
 void Time::setEndMinute(int arr, int x) { if (x >= 0 && x <= 59) { endMinute[arr] = x; } else { endMinute[arr] = 0; cout << "Error\n"; } }
 
-void Time::setDuration(int arr, int startHour, int startMinute, int endHour, int endMinute) {
+void Time::setDuration(int arr) {
     // convert to minutes
     int startTotal, endTotal;
-    startTotal = ((startHour * 60) + startMinute);
-    endTotal = ((endHour * 60) + endMinute);
+    startTotal = ((startHour[arr] * 60) + startMinute[arr]);
+    endTotal = ((endHour[arr] * 60) + endMinute[arr]);
     // calculation
     if ((endTotal - startTotal) < 0) {
         cout << "Duration is negative" << endl;

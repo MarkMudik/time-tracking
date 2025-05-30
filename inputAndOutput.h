@@ -1,14 +1,13 @@
 #ifndef INPUT_AND_OUTPUT_H
 #define INPUT_AND_OUTPUT_H
-#include <string>
 #include "Recipient.h"
+#include <vector>
 
 void printMenu();
-void enterRecipientNames(Recipient &x);
-void enterRecipientRequiredMinutes(Recipient &x);
-void enterDay(Recipient &x);
-void viewRecipients(Recipient &x);
-void enterRecipientChosen(Recipient &x);
-void enterRecipientTimes(Recipient &x);
+int enterRecipientAmount();
+void enterRecipientNameAndRequiredMinutes(std::vector<Recipient>& recipient);
+int chooseRecipient(const std::vector<Recipient>& recipient);
+void enterRecipientTimes(int arr, std::vector<Recipient>& recipient);
+void printCalendar(std::vector<Recipient> &recipient);
 
 #endif

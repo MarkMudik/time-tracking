@@ -12,11 +12,9 @@ public:
     // setters
     void setName(const string x);
     void setRequiredMinutes(const int y);
-    void setChosenRecipient(int z);
     // getters
     string getName() const;
     int getRequiredMinutes() const;
-    int getChosenRecipient() const;
 private:
     string name;
     int requiredMinutes;
