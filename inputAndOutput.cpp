@@ -43,19 +43,23 @@ int chooseRecipient(const std::vector<Recipient>& recipient) {
     int x;
     std::cout << "Recipients" << endl;
     for (size_t i = 0; i < recipient.size(); i++) {
-        std::cout << "(" << i+1 << recipient[i].getName() << "): " << std::endl;
+        std::cout << "(" << i+1 << "): " << recipient[i].getName() << std::endl;
     }
     std::cout << "Choose recipient: ";
     cin >> x;
     return (x-1);
 }
 
-void enterRecipientTimes(int arr, std::vector<Recipient>& recipient) {
+int chooseDay() {
+    int x;
+    cout << "Enter day: ";
+    cin >> x;
+    return (x-1);
+}
+
+void enterRecipientTimes(int arr, int day, std::vector<Recipient>& recipient) {
     // day, start time, end time
-    int day;
     int a;
-    std::cout << "Enter day: ";
-    cin >> day;
     cout << "Start hour: ";
     cin >> a;
     recipient[arr].setStartHour(day, a);
@@ -79,9 +83,10 @@ void printCalendar(std::vector<Recipient>& recipient) {
         cout << "For: " << recipient[i].getName() << endl;
         for (size_t t = 0; t < 31; t++) {
             if (recipient[i].getStartHour(t) > 0) {
-                cout << "Day " << t << endl;
+                cout << "Day " << t+1 << endl;
                 cout << "Start time: " << recipient[i].getStartHour(t) << ":" << recipient[i].getStartMinute(t) << endl;
                 cout << "End time: " << recipient[i].getEndHour(t) << ":" << recipient[i].getEndMinute(t) << endl;
+                cout << "Duration: " << recipient[i].getDuration(t) << endl;
             }
         }
     }
