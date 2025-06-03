@@ -1,24 +1,22 @@
 #ifndef RECIPIENT_H
 #define RECIPIENT_H
-#include "Time.h"
 #include <string>
-using namespace std;
 
-class Recipient : public Time {
+class Recipient {
 public:
     // constructors
     Recipient();
-    Recipient(const string &x, const int y);
+
     // setters
-    void setName(const string x);
+    void setName(const std::string x);
     void setRequiredMinutes(const int y);
+
     // getters
-    string getName() const;
+    std::string getName() const;
     int getRequiredMinutes() const;
 private:
-    string name;
-    int requiredMinutes;
-    int chosenRecipient;
+    int requiredMinutes = 0;
+    std::string name = "";
 };
 
 #endif
