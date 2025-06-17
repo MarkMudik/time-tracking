@@ -1,5 +1,6 @@
 #ifndef RECIPIENT_H
 #define RECIPIENT_H
+#include <fstream>
 #include <string>
 
 class Recipient {
@@ -8,15 +9,19 @@ public:
     Recipient();
 
     // setters
-    void setName(const std::string x);
-    void setRequiredMinutes(const int y);
+    void setName(const std::string newName);
+    void setRequired(const int x);
 
     // getters
-    std::string getName() const;
-    int getRequiredMinutes() const;
+    const std::string getName() const;
+    int getRequired() const;
+
+    // file
+    void writeToFile(std::ofstream& out) const;
+    void readToFile(std::ifstream& in);
 private:
-    int requiredMinutes = 0;
-    std::string name = "";
+    std::string name;
+    int required;
 };
 
 #endif

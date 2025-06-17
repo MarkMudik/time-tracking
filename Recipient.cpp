@@ -1,17 +1,15 @@
 #include "Recipient.h"
+#include <fstream>
 #include <string>
-using namespace std;
 
+
+// constructors
 Recipient::Recipient() {}
 
 // setters
-void Recipient::setName(const string x) { name = x; }
-void Recipient::setRequiredMinutes(const int y) { requiredMinutes = y; }
+void Recipient::setName(const std::string newName) { name = newName; }
+void Recipient::setRequired(const int x) { required = x; }
 
 // getters
-string Recipient::getName() const {
-    return name;
-}
-int Recipient::getRequiredMinutes() const {
-    return requiredMinutes;
-}
+const std::string Recipient::getName() const { return name; }
+int Recipient::getRequired() const { return required; }
